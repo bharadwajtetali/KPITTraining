@@ -25,23 +25,16 @@ print("Maximum Sound: ",max_sound)
 print("Maximum Speed: ",max_speed)
 print("Average Speed: ",avg_speed)
 
-def plt_light(df):
-    plt.plot(df.iloc[: 9])
+f,ax = plt.subplots(3, sharex= True)
+ax[0].set_title('Graph which represents Light, Sound and Acceleration')
+ax[0].plot(light)
+ax[0].set_ylabel("Lux")
+ax[1].plot(sound)
+ax[1].set_ylabel("dB")
+ax[2].plot(speed)
+ax[2].set_ylabel("m/s2")
+plt.xlabel('Time in ms')
 
-def plt_sound(df):
-    plt.plot(df.iloc[:10])
-
-
-#print(a1.shape)
-#print(df)
-df.plot()
 plt.show()
 
-
-
-#def column(mtx,idx):
-    #ret=[]
-   # for i in range(0,len(mtx)):
-  #      ret.append(mtx[i][idx])
- #   return ret
 
