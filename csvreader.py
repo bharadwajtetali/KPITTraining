@@ -6,11 +6,12 @@ import numpy as np
 #import csv file to a dataframe as df using pandas
 df = pd.read_csv("androsense.csv",sep=",")
 #Setting Time column as index
-df.set_index('Time', inplace=True)
+time = df.iloc[:,29]
+df.set_index(time, inplace=True)
 
 #Storing light, sound, acceleration column in an array. Using iloc() to find the location of the column
-light = df.iloc[:, 9]
-sound = df.iloc[:, 10]
+light = df.iloc[:, 12]
+sound = df.iloc[:, 20]
 accel = df.iloc[:,2]
 
 #Calculating the features
